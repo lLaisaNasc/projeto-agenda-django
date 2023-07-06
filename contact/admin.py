@@ -6,7 +6,7 @@ from contact.models import Contact
 
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = 'id', 'first_name', 'last_name', 'phone',
+    list_display = 'id', 'first_name', 'last_name', 'phone', 'show',
     ordering = '-id', 
 
     # ---- opções de filtrar por data ----
@@ -21,7 +21,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_max_show_all = 200
 
     # ---- deixa os campos editáveis ----
-    list_editable = 'first_name', 'last_name',
+    list_editable = 'first_name', 'last_name', 'show'
 
     list_display_links = 'id', 'phone',
 
