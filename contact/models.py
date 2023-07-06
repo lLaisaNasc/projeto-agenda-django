@@ -3,6 +3,12 @@ from django.utils import timezone
 
 # Create your models here.
 
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self) -> str:
+        return self.name
+
 class Contact(models.Model):
     #---- id é feito de forma automatica -------
 
@@ -19,6 +25,8 @@ class Contact(models.Model):
 
     show = models.BooleanField(default=True)
     picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, blank=True, null=True)
 
 
     #retorna como nome de objeto
