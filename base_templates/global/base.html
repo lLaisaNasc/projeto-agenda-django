@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  {% include 'global/partials/_head.html' %}
-</head>
-<body>
-  {% include 'global/partials/_header.html' %}
+  <head>
+    {% include 'global/partials/_head.html' %}
+  </head>
+  <body>
+    {% include 'global/partials/_header.html' %} 
+    {% include 'global/partials/_messages.html' %} 
 
-  <main class="content">
-    {% block content %}{% endblock content %}
-    {% include 'global/partials/_pagination.html' %}
-  </main>
-
-</body>
+    <main class="content">
+      {% block content %}
+        {% include 'global/partials/_pagination.html' %}
+      {% endblock content %} 
+      
+    </main>
+  </body>
 </html>
