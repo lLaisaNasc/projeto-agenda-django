@@ -15,6 +15,9 @@ class ContactForm(forms.ModelForm):
         help_text='Texto de ajuda para seu usuário',
     )
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
     class Meta:
         model = models.Contact
         fields = (
